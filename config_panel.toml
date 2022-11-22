@@ -1,0 +1,15 @@
+version = "1.0"
+
+[main]
+name = "Element configuration"
+
+    [main.config]
+    name = "Configuration Options"
+
+        [main.config.login_for_welcome]
+        ask = "Display login as welcome page"
+        type = "boolean"
+        yes = true
+        no = false
+        help = "When true, the app will use the login form as a welcome page instead of the welcome page itself. This disables use of welcome_url and all welcome page functionality."
+        bind = "login_for_welcome:/var/www/__APP__/config.json"

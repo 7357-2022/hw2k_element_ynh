@@ -1,0 +1,63 @@
+{
+	"name": "Element",
+	"id": "element",
+	"packaging_format": 1,
+	"description": {
+		"en": "Web client for Matrix",
+		"fr": "Client web pour Matrix"
+	},
+	"version": "1.11.14~ynh1",
+	"url": "https://element.io",
+	"upstream": {
+        "license": "Apache-2.0",
+        "website": "https://element.io",
+        "demo": "https://app.element.io/",
+        "admindoc": "https://element.io/help",
+        "code": "https://github.com/vector-im/element-web/"
+    },
+	"license": "Apache-2.0",
+	"maintainer": {
+		"name": "Josué Tille",
+		"email": "josue@tille.ch"
+	},
+	"requirements": {
+		"yunohost": ">= 4.3.0"
+	},
+	"multi_instance": true,
+	"services": [
+		"nginx"
+	],
+	"arguments": {
+		"install" : [
+			{
+				"name": "domain",
+				"type": "domain"
+			},
+			{
+				"name": "path",
+				"type": "path",
+				"example": "/element",
+				"default": "/element"
+			},
+			{
+				"name": "default_home_server",
+				"type": "string",
+				"ask": {
+					"en": "Choose a default home server",
+					"fr": "Choisissez un serveur par défault"
+				},
+				"example": "my-own-homeserver.tld",
+				"default": "matrix.org"
+			},
+			{
+				"name": "is_public",
+				"type": "boolean",
+                "help": { 
+					"en": "A public application means that anyone can access it. Note that this application provides just files (html, javascript, images, etc.)",
+					"fr": "Une application publique signifie que n'importe qui peut y accéder. Notez que cette application ne fournit que des fichiers (html, javascript, images, etc.)"
+				},
+				"default": false
+			}
+		]
+	}
+}
